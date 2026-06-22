@@ -1,26 +1,169 @@
 @import "tailwindcss";
 
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-primary:    #0B0B0B;
+  --bg-secondary:  #151515;
+  --bg-card:       #131313;
+  --gold-primary:  #D4AF37;
+  --gold-accent:   #F5C542;
+  --gold-dim:      #A88B1F;
+  --text-primary:  #F8F8F8;
+  --text-muted:    #B5B5B5;
+  --glass-border:  rgba(212, 175, 55, 0.2);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-gold:         var(--gold-primary);
+  --color-gold-accent:  var(--gold-accent);
+  --color-gold-dim:     var(--gold-dim);
+  --font-cinzel:        'Cinzel', serif;
+  --font-montserrat:    'Montserrat', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ============================================================
+   BASE — @layer içinde olmayan reset'i KALDIRDIK.
+   Tailwind v4 kendi preflight'ını zaten inject ediyor.
+   Unlayered * { padding:0 } tüm utility padding'leri ezer!
+   ============================================================ */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0B0B0B;
+  color: #F8F8F8;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar          { width: 5px; }
+::-webkit-scrollbar-track    { background: #0B0B0B; }
+::-webkit-scrollbar-thumb    { background: #D4AF37; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #F5C542; }
+
+/* ============================================================
+   KEYFRAMES
+   ============================================================ */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+@keyframes sweep {
+  0%   { transform: translateX(-120%) rotate(25deg); }
+  100% { transform: translateX(220%)  rotate(25deg); }
+}
+
+/* ============================================================
+   LAYOUT UTILITIES
+   These are plain CSS classes — NOT Tailwind utilities —
+   so they won't conflict with the layer system.
+   ============================================================ */
+.section-padding {
+  padding-top:    100px;
+  padding-bottom: 100px;
+}
+
+.container-width {
+  max-width: 1280px;
+  margin-left:  auto;
+  margin-right: auto;
+  padding-left:  28px;
+  padding-right: 28px;
+}
+
+/* ============================================================
+   COMPONENT CLASSES
+   ============================================================ */
+
+/* Gold gradient text */
+.gold-gradient {
+  background: linear-gradient(135deg, #D4AF37 0%, #F5C542 50%, #D4AF37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Shimmer text */
+.shimmer-text {
+  background: linear-gradient(90deg,
+    #D4AF37 0%, #F5C542 25%, #fff 50%, #F5C542 75%, #D4AF37 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* Glassmorphism */
+.glass {
+  background:             rgba(255, 255, 255, 0.05);
+  backdrop-filter:        blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border:        1px solid rgba(212, 175, 55, 0.18);
+  border-radius: 16px;
+}
+
+/* Premium card — solid visible background, padding, radius */
+.premium-card {
+  background:    #131313;
+  border:        1px solid rgba(212, 175, 55, 0.18);
+  border-radius: 16px;
+  padding:       32px;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+}
+
+.premium-card:hover {
+  background:    #181818;
+  border-color:  rgba(212, 175, 55, 0.45);
+  box-shadow:
+    0 0 0 1px rgba(212, 175, 55, 0.12),
+    0 20px 60px rgba(212, 175, 55, 0.1);
+}
+
+/* Gold border glow */
+.gold-border-glow {
+  border:        1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 16px;
+  box-shadow:
+    0 0 20px rgba(212, 175, 55, 0.08),
+    inset 0 0 20px rgba(212, 175, 55, 0.03);
+  transition: all 0.4s ease;
+}
+.gold-border-glow:hover {
+  border-color:  rgba(212, 175, 55, 0.7);
+  box-shadow:
+    0 0 40px rgba(212, 175, 55, 0.25),
+    inset 0 0 30px rgba(212, 175, 55, 0.06);
+}
+
+/* Light sweep effect on a container */
+.light-sweep {
+  position: relative;
+  overflow: hidden;
+}
+.light-sweep::after {
+  content:    '';
+  position:   absolute;
+  top:        -50%;
+  left:       -60%;
+  width:      40%;
+  height:     200%;
+  background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.1), transparent);
+  transform:  rotate(25deg);
+  animation:  sweep 3.5s ease-in-out infinite;
+}
+
+/* Misc */
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+@media (max-width: 768px) {
+  .section-padding   { padding-top: 72px; padding-bottom: 72px; }
+  .container-width   { padding-left: 18px; padding-right: 18px; }
+  .premium-card      { padding: 24px; }
 }
