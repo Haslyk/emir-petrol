@@ -15,9 +15,9 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Emir Petrol Yalova | Çiftlikköy & Tavşanlı Şubeleri",
+  title: "Emir Petrol Yalova | Çiftlikköy & Altınova Şubeleri",
   description:
-    "Yalova'da 7/24 güvenilir yakıt ve üst düzey hizmet. Çiftlikköy ve Tavşanlı şubelerimizle her an yanınızdayız. Benzin, motorin, market ve daha fazlası.",
+    "Yalova'da 7/24 güvenilir yakıt ve üst düzey hizmet. Çiftlikköy ve Altınova şubelerimizle her an yanınızdayız. Benzin, motorin, market ve daha fazlası.",
   keywords: [
     "Emir Petrol",
     "Yalova",

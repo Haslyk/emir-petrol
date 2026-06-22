@@ -108,7 +108,7 @@ export default function Footer() {
           className="mt-12 pt-6 border-t border-[#D4AF37]/10 flex flex-col sm:flex-row items-center justify-between gap-4"
         >
           <p className="text-[#B5B5B5]/50 text-xs font-montserrat tracking-wide">
-            Yalova • Çiftlikköy & Tavşanlı • Türkiye
+            Yalova • Çiftlikköy & Altınova • Türkiye
           </p>
           <p className="text-[#D4AF37]/40 text-xs font-montserrat">
             yalovaemirpetrol.com

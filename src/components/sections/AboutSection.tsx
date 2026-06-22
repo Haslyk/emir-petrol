@@ -102,7 +102,7 @@ export default function AboutSection() {
             >
               <p className="font-montserrat text-[#B5B5B5] leading-relaxed" style={{ fontSize: "0.9375rem" }}>
                 Emir Petrol olarak, Yalova&apos;da yıllardır güvenilir akaryakıt hizmetinin simgesi
-                olarak hizmet vermekteyiz. Çiftlikköy ve Tavşanlı şubelerimizle müşteri memnuniyetini
+                olarak hizmet vermekteyiz. Çiftlikköy ve Altınova şubelerimizle müşteri memnuniyetini
                 her şeyin önünde tutan anlayışımızla hizmetinizdeyiz.
               </p>
               <p className="font-montserrat text-[#B5B5B5] leading-relaxed" style={{ fontSize: "0.9375rem" }}>

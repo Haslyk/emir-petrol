@@ -201,7 +201,7 @@ export default function HeroSection() {
           className="font-montserrat text-[#B5B5B5] leading-relaxed mb-10 mx-auto"
           style={{ fontSize: "clamp(0.85rem, 1.1vw, 1rem)", maxWidth: "520px" }}
         >
-          Çiftlikköy ve Tavşanlı şubelerimizle Yalova&apos;da 7/24 güvenilir yakıt ve üst düzey hizmet
+          Çiftlikköy ve Altınova şubelerimizle Yalova&apos;da 7/24 güvenilir yakıt ve üst düzey hizmet
         </motion.p>
 
         {/* CTA buttons */}

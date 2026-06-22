@@ -88,9 +88,9 @@ export const stations: Station[] = [
   {
     id: "tavsanli",
     name: "Fox Emir Petrol",
-    shortName: "Tavşanlı Şubesi",
-    district: "Tavşanlı / Altınova / Yalova",
-    address: "Fatih, Fatih Cd. 31/B, 77740 Tavşanlı / Altınova / Yalova",
+    shortName: "Altınova Şubesi",
+    district: "Altınova / Yalova",
+    address: "Fatih, Fatih Cd. 31/B, 77740 Altınova / Yalova",
     phone: "0533 491 94 77",
     phoneHref: "tel:+905334919477",
     workingHours: "24 Saat Açık",
