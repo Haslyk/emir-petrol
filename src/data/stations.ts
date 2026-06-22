@@ -63,8 +63,8 @@ export const stations: Station[] = [
     shortName: "Çiftlikköy Şubesi",
     district: "Çiftlikköy / Yalova",
     address: "Taşköprü Merkez, Kocaeli Yolu, 77600 Çiftlikköy / Yalova",
-    phone: "0533 542 65 43",
-    phoneHref: "tel:+905335426543",
+    phone: "0535 843 01 96",
+    phoneHref: "tel:+905358430196",
     workingHours: "24 Saat Açık",
     isOpen24h: true,
     googleMapsUrl:
@@ -91,8 +91,8 @@ export const stations: Station[] = [
     shortName: "Altınova Şubesi",
     district: "Altınova / Yalova",
     address: "Fatih, Fatih Cd. 31/B, 77740 Altınova / Yalova",
-    phone: "0533 491 94 77",
-    phoneHref: "tel:+905334919477",
+    phone: "0535 843 01 96",
+    phoneHref: "tel:+905358430196",
     workingHours: "24 Saat Açık",
     isOpen24h: true,
     googleMapsUrl:
